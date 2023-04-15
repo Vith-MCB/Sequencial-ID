@@ -1,0 +1,30 @@
+How to implement:
+
+- Open Google Drive and create a new Google Sheets file.
+
+- Create a new Google Form connected to the Google Sheets file. Add a question for the submission number and make it required.
+
+- In the Google Sheets file, go to Tools > Script editor to open the Google Apps Script editor.
+
+- Copy and paste the code (from getSequencialID.js file) into the script editor: 
+
+- Save the script and give it a name.
+
+- In the script editor, select "Resources" > "Current project's triggers".
+
+- Click the "Add Trigger" button and configure the trigger to run the onFormSubmit function when a user submits the form.
+
+- Save the trigger and close the trigger dialog.
+
+- Deploy the script as a web app by selecting "Publish" > "Deploy as web app". Set the access level to "Anyone, even anonymous", and click "Deploy".
+
+- Copy the URL of the deployed web app.
+
+- Go back to the Google Form editor and select "Responses" > "View responses".
+
+- Submit a new response to the form to test the script. You should see a message box displaying the submission number.
+
+- Share the form with users and instruct them to submit their responses through the web app URL you copied in step 10. They will see the submission number as soon 
+as they submit the form.
+
+That's it! You have now implemented the Google Apps Script that retrieves the submission number of a Google Form response.
