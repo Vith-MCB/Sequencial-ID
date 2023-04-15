@@ -1,2 +1,2 @@
 # Sequencial-ID
- This repository contains code to return a sequential ID every time a Form is sent by user.
+This repository contains a Google Apps Script that retrieves the sequential submission number of a Google Form response and displays it in a message box as soon as the user submits the form. The script uses the 'onFormSubmit' trigger to automatically retrieve the submission number and can be customized to perform other actions with the response data. The code is well-commented and can be easily modified to suit your specific needs. Check out the repository for detailed instructions on how to deploy and use the script.
