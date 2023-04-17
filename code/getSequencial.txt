@@ -3,7 +3,7 @@ function onFormSubmit(e) {
   var responseId = e.response.getId();
   var submissionNumber = getSubmissionNumber(formId, responseId);
   var form = FormApp.openById(formId);
-  form.setConfirmationMessage("Your submission number is: " + submissionNumber);
+  form.setConfirmationMessage("Your submission number is: " + (++submissionNumber));
 }
 
 function getSubmissionNumber(formId, responseId) {
