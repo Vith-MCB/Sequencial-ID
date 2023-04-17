@@ -1,0 +1,20 @@
+function onFormSubmit(e) {
+  var formId = e.source.getId();
+  var responseId = e.response.getId();
+  var submissionNumber = getSubmissionNumber(formId, responseId);
+  var form = FormApp.openById(formId);
+  form.setConfirmationMessage("Your submission number is: " + submissionNumber);
+}
+
+function getSubmissionNumber(formId, responseId) {
+  var form = FormApp.openById(formId);
+  var formResponses = form.getResponses();
+  for (var i = 0; i < formResponses.length; i++) {
+    var formResponse = formResponses[i];
+    var formResponseId = formResponse.getId();
+    if (formResponseId == responseId) {
+      return i + 1;
+    }
+  }
+  return null;
+}
