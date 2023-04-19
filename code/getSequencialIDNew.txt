@@ -3,7 +3,8 @@ function onFormSubmit(e) {
   var responseId = e.response.getId();
   var submissionNumber = getSubmissionNumber(formId, responseId);
   var form = FormApp.openById(formId);
-  form.setConfirmationMessage("O número do seu envio foi: " + (++submissionNumber));
+  var firstAnswer = e.response.getItemResponses()[0].getResponse(); // get the first answer from the form response
+  form.setConfirmationMessage("O número da sua resposta é: " + (++submissionNumber) + "\nSua primeira resposta foi: " + firstAnswer);
 }
 
 function getSubmissionNumber(formId, responseId) {
