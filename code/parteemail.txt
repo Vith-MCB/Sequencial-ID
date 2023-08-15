@@ -1,0 +1,17 @@
+function sendMail(e) {
+  const planilha = SpreadsheetApp.getActiveSpreadsheet();
+  const guia = planilha.getSheetByName("Respostas ao formulário 1");
+  const ultimalinha = guia.getLastRow();
+  guia.getRange(ultimalinha, 5).setValue(ultimalinha);
+
+  const email = e.namedValues['Endereço de e-mail'][0];
+  if (!email) {
+    console.error('Endereço de e-mail não encontrado na resposta do formulário.');
+    return;
+  }
+
+  const enderecoDestino = email;
+  const assuntoEmail = "Resposta formulário de Número de Ofício";
+  const conteudoEmail = "Número do Ofício registrado: " + ultimalinha;
+  GmailApp.sendEmail(enderecoDestino, assuntoEmail, conteudoEmail);
+}
